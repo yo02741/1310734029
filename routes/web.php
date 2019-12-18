@@ -26,3 +26,9 @@ Route::get('/login','UserController@login_page');
 
 
 Route::post('/login','UserController@login_process');
+
+
+Route::get('/home','UserController@home_page');
+
+
+Route::get('/logout','UserController@logout');

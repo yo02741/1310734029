@@ -93,7 +93,7 @@ class UserController extends Controller
             // var_dump(session()->get('account'));
             // var_dump(session()->get('name'));
 
-            return 'Welcome,'.$Users->name;
+            return redirect('/home');
 
        }
 
@@ -102,5 +102,18 @@ class UserController extends Controller
 
     public function logout(){
 
+        session()->forget('id');
+        session()->forget('account');
+        session()->forget('name');
+        return view('welcome');
+        
+    }
+
+    public function home_page(){
+        if(session()->has('id')){
+            return view('home');
+        }else{
+            return view('welcome');
+        }
     }
 }
