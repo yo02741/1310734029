@@ -105,8 +105,8 @@ class UserController extends Controller
         session()->forget('id');
         session()->forget('account');
         session()->forget('name');
-        return view('welcome');
-        
+        return redirect('/');
+
     }
 
     public function home_page(){
