@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Validator;
 use App\User;
+use Hash;
 
 class UserController extends Controller
 {
@@ -68,24 +69,35 @@ class UserController extends Controller
 
         $Users = User::where('account',$postData['account'])->firstOrFail();
 
-        var_dump($Users->password); //only100
 
-        // $is_password_correct = ::check($postData,$Users->password); <- 不知道用甚麼check
+       if($postData['password']!=$Users->password){
+            $error_msg = [
+                        'msg' =>[
+                            '密碼驗證錯誤！',
+                        ],
+                    ];
+        
+            return redirect('/login')
+                ->withErrors($error_msg)
+                ->withInput();
+        
+       }else{
+            session()->put('id',$Users->id);
+            session()->put('account',$Users->account);
+            session()->put('name',$Users->name);
+
+            // var_dump(session()->has('id'));
+            // var_dump(session()->has('account'));
+            // var_dump(session()->has('name'));
+            // var_dump(session()->get('id'));
+            // var_dump(session()->get('account'));
+            // var_dump(session()->get('name'));
+
+            return 'Welcome,'.$Users->name;
+
+       }
 
 
-        // if(!$is_password_correct){
-
-        //     $error_msg = [
-        //         'msg' =>[
-        //             '密碼驗證錯誤！',
-        //         ],
-        //     ];
-
-        //     return redirect('/login')
-        //         ->withErrors($error_msg)
-        //         ->withInput();
-
-        // }
     }
 
     public function logout(){
