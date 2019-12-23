@@ -15,7 +15,13 @@
         <style>
             html, body {
                 /* background-color: #fff; */
-                background-color: rgba(252, 72, 72, 0.5);
+                /* background-color: rgba(252, 72, 72, 0.5); */
+                background-image: -webkit-linear-gradient(45deg, #fc3232, #ff967b);
+                background-image: -moz-linear-gradient(right, #fc3232, #ff967b);
+                background-image: -o-linear-gradient(right, #fc3232, #ff967b);
+                background-image: -ms-linear-gradient(right, #fc3232, #ff967b);
+                background-image: linear-gradient(right, #fc3232, #ff967b);
+
                 /* color: #636b6f; */
                 color: rgba(49, 49, 218, 0.822);
                 font-family: 'Nunito', sans-serif;

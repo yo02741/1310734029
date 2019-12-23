@@ -84,7 +84,12 @@ html {
     justify-content: center;
     align-items: center;
     /* padding: 15px; */
-    background: var(--maincolor);
+    /* background: var(--maincolor); */
+    background-image: -webkit-linear-gradient(45deg, #fc3232, #ff967b);
+    background-image: -moz-linear-gradient(right, #fc3232, #ff967b);
+    background-image: -o-linear-gradient(right, #fc3232, #ff967b);
+    background-image: -ms-linear-gradient(right, #fc3232, #ff967b);
+    background-image: linear-gradient(right, #fc3232, #ff967b);
 }  
 
     .wrapper > .container {
