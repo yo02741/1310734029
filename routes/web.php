@@ -37,6 +37,9 @@ Route::get('/logout','UserController@logout');
 Route::get('/comments','UserController@comments_page_n_show');
 
 
-Route::get('/addcomments','UserController@add_comments');
+Route::get('/addcomments','UserController@add_comments_show');
+
+
+Route::post('/addcomments','UserController@add_comments_send');
 
 

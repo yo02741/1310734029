@@ -121,7 +121,10 @@ class UserController extends Controller
         return view('comments');
     }
 
-    public function add_comments(){
+    public function add_comments_show(){
         return view('addcomments');
+    }
+
+    public function add_comments_send(){
     }
 }
