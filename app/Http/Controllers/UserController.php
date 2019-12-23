@@ -116,4 +116,12 @@ class UserController extends Controller
             return view('welcome');
         }
     }
+
+    public function comments_page_n_show(){
+        return view('comments');
+    }
+
+    public function add_comments(){
+        return view('addcomments');
+    }
 }

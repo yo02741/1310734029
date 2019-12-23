@@ -68,6 +68,16 @@
                 text-transform: uppercase;
             }
 
+            .links > span {
+                color: rgba(49, 49, 218, 0.822);
+                padding: 0 25px;
+                font-size: 18px;
+                font-weight: 900;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+
             .m-b-md {
                 margin-bottom: 30px;
             }
@@ -95,8 +105,9 @@
                 </div>
 
                 <div class="links">
-                    <span>account: {{session()->get('account')}} </span><br>
-                    <span>id: {{session()->get('id')}} </span><br>
+                    <!-- <span>account: {{session()->get('account')}} </span>
+                    <span>id: {{session()->get('id')}} </span><br><br> -->
+                    <a href="{{url('/comments')}}">Comments</a>
                     <a href="{{url('/logout')}}">Logout</a>
                 </div>
             </div>

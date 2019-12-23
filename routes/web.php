@@ -32,3 +32,11 @@ Route::get('/home','UserController@home_page');
 
 
 Route::get('/logout','UserController@logout');
+
+
+Route::get('/comments','UserController@comments_page_n_show');
+
+
+Route::get('/addcomments','UserController@add_comments');
+
+
