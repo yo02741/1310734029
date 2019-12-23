@@ -47,8 +47,7 @@
                     </div>
 
                     <div class="custom-btn-container">
-                        <input type="submit" class="register-btn" value="Register">
-                        <!-- <button class="register-btn">Register</button> -->
+                        <button class="register-btn">Register</button>
                         <button onclick='javascript:history.back()' class="back-btn">Back</button>
                     </div>
                 </form>

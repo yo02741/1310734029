@@ -40,7 +40,7 @@
 
                     <div class="custom-btn-container">
                         <button class="addcomments-btn">Add</button>
-                        <button onclick='javascript:history.back()' class="back-btn">Back</button>
+                        <button onclick='javascript:history.back()' class="back-btn2">Back</button>
                     </div>
                 </form>
                 

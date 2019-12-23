@@ -10,10 +10,10 @@ class Comment extends Model
     // public $timestamps = false;
 
 
-    protected $primaryKey = 'comment_id';
+    protected $primaryKey = 'cid';
 
     protected $fillable = [
-        'account','users_id', 'content'
+        'users_id', 'title', 'content',
     ];
 
     protected $hidden = [

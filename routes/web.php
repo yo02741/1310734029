@@ -34,12 +34,12 @@ Route::get('/home','UserController@home_page');
 Route::get('/logout','UserController@logout');
 
 
-Route::get('/comments','UserController@comments_page_n_show');
+Route::get('/comments','CommentsController@comments_page_n_show');
 
 
-Route::get('/addcomments','UserController@add_comments_show');
+Route::get('/addcomments','CommentsController@add_comments_show');
 
 
-Route::post('/addcomments','UserController@add_comments_send');
+Route::post('/addcomments','CommentsController@add_comments_send');
 
 

@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Validator;
 use App\User;
-use Hash;
 
 class UserController extends Controller
 {
@@ -117,14 +116,5 @@ class UserController extends Controller
         }
     }
 
-    public function comments_page_n_show(){
-        return view('comments');
-    }
-
-    public function add_comments_show(){
-        return view('addcomments');
-    }
-
-    public function add_comments_send(){
-    }
+    
 }
