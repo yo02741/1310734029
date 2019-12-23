@@ -22,7 +22,7 @@
                 
                     <span class="addcomments-form-txt">Name</span>
                     <div class="input-wrapper mg-b-36">
-                        <input type="text" name="name"  class="custom-input" disabled="disabled">
+                        <input type="text" name="name"  value="{{session()->get('name')}}" class="custom-input" disabled="disabled">
                     </div>
                 
                     <span class="addcomments-form-txt">Title</span>

@@ -109,6 +109,28 @@ html {
             flex-wrap: wrap;
         }
 
+.btn {
+    position: relative;
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    min-width: 150px;
+    height: 45px;
+    background: #fff;
+    border: 1px solid #ACA4A4;
+    border-radius: 5px;
+    color: #555;
+    margin: 0 auto;
+    transition: all .5s;
+}
+
+.btn:hover {
+    border: 1px solid var(--secondarycolor);
+    color: var(--secondarycolor);   
+}
+
 .login-form-title {
     display: block;
     text-align: center;
