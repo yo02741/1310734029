@@ -48,18 +48,13 @@
 
                     <div class="custom-btn-container">
                         <button class="register-btn">Register</button>
-                        <button onclick='javascript:history.back()' class="back-btn">Back</button>
                     </div>
                 </form>
+                <button onclick="location.href='/';" class="back-btn">Back</button>
+
                 
             </div>            
         </div>
-        <!-- <div class="container2">            
-            <select name="lang" class="lang-style">
-                <option value="en">English</option>
-                <option value="zh-TW">ç¹�é«”ä¸­æ–‡</option>
-            </select>
-        </div> -->
     </div>
 </body>
 </html>
