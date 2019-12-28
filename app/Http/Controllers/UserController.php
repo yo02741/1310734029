@@ -85,13 +85,6 @@ class UserController extends Controller
             session()->put('account',$Users->account);
             session()->put('name',$Users->name);
 
-            // var_dump(session()->has('id'));
-            // var_dump(session()->has('account'));
-            // var_dump(session()->has('name'));
-            // var_dump(session()->get('id'));
-            // var_dump(session()->get('account'));
-            // var_dump(session()->get('name'));
-
             return redirect('/home');
 
        }

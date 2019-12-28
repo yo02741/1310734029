@@ -3,13 +3,17 @@
 namespace App\Http\Controllers;
 use Validator;
 use App\Comment;
+use App\User;
 
 use Illuminate\Http\Request;
 
 class CommentsController extends Controller
 {
     public function comments_page_n_show(){
-        return view('comments');
+        $UsersData = User::all();
+        $CommentsData = Comment::all();
+
+        return view('comments',compact('UsersData','CommentsData'));
     }
 
     public function add_comments_show(){
@@ -35,6 +39,10 @@ class CommentsController extends Controller
             // return response()->json($objValidator-errors()->all(),400);
         }
         $Comments = Comment::create($postdata);
-        return view('comments');
+
+        $UsersData = User::all();
+        $CommentsData = Comment::all();
+
+        return view('comments',compact('UsersData','CommentsData'));
     }
 }
