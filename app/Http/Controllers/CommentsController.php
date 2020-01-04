@@ -11,7 +11,8 @@ class CommentsController extends Controller
 {
     public function comments_page_n_show(){
         $UsersData = User::all();
-        $CommentsData = Comment::all();
+        // $CommentsData = Comment::all();
+        $CommentsData = Comment::orderByDESC('created_at')->get();
 
         return view('comments',compact('UsersData','CommentsData'));
     }
@@ -43,6 +44,7 @@ class CommentsController extends Controller
         $UsersData = User::all();
         $CommentsData = Comment::all();
 
+        return redirect('/comments');
         return view('comments',compact('UsersData','CommentsData'));
     }
 }

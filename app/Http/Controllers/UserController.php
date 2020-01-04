@@ -35,6 +35,7 @@ class UserController extends Controller
         }
         $Users = User::create($postData);
         // return response()->json("註冊成功",200);
+        return redirect('/');
         return view('welcome');
         
 

@@ -8,40 +8,34 @@
 </head>
 <body>
     <div class="wrapper"> 
-        <!-- {{$UsersData[0]->id}} -->
+        <div class="article_list_container">
+            <div class="article_list_title">Comments</div>
+            @foreach ($CommentsData as $CommentsData)
+            <div class="content_area">
+                <div class="contenttt">                    
+                    <a href="/comments/{{$CommentsData->cid}}" class="title">{{$CommentsData->title}}</a>
+                </div>
+            
+                <div class="contenttt content">
+                    {{$CommentsData->content}}
+                </div>
+
+                <div class="contenttt info">
+                    {{$CommentsData->created_at}}，
+                        @for($i=0;$i <= count($UsersData)-1;$i++)
+                            @if($CommentsData->users_id == $UsersData[$i]->id)
+                                由 {{$UsersData[$i]->name}} 發布
+                        @endif
+                @endfor
+                </div>
+            </div>
+            @endforeach
+        </div>
 
          
 
-        @foreach ($CommentsData as $CommentsData)
-            <div>
-                title: {{$CommentsData->title}}
-            </div>
-
-            @for($i=0;$i <= count($UsersData)-1;$i++)
-                @if($CommentsData->users_id == $UsersData[$i]->id)
-                <div>
-                    name: {{$UsersData[$i]->name}}
-                </div>  
-                @endif
-            @endfor
-
-            
-                      
-
-            <div>
-                content: {{$CommentsData->content}}
-            </div>
-
-            <div>
-                created_at: {{$CommentsData->created_at}}
-            </div>
-
-            <div>
-                -----------------------
-            </div>
-
-        @endforeach
-        <input type="button" value="AddComments" onclick="location.href='/addcomments'" class="btn">
+      
+        <input type="button" value="+" onclick="location.href='/addcomments'" class="contenttt_btn">
     </div>
 </body>
 </html>
