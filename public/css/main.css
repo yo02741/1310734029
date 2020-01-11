@@ -143,7 +143,7 @@ html {
     margin-bottom: 30px;
 }
 
-.login-form-txt {
+.form-txt {
     display: block;
     text-align: left;
     font-weight: normal;
@@ -595,4 +595,58 @@ padding: 1px 0px 10px 0px;
 .contenttt_btn:hover {
     border: 1px solid var(--secondarycolor);
     color: var(--secondarycolor);   
+}
+
+/**   comment inside page  **/
+
+.wrapper > .comment-container {
+    width: 500px;
+    background-color: #fff;
+    border-radius:  10px;
+    /* border: solid 0.5px #000; */
+    position: relative;
+    padding: 25px 85px 45px 85px;
+    box-shadow: 10px 10px 10px #888888;
+}
+
+
+.wrapper > .container > .comment-form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.back-btn3 {
+    position: absolute;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    min-width: 150px;
+    height: 45px;
+    background: transparent;
+    border: 1px solid #ACA4A4;
+    border-radius: 5px;
+    color: #555;
+    margin: 0 30px;
+    transition: all .5s;
+    bottom: 15px;
+    left: 140px;
+}
+
+.back-btn3:hover {
+    border: 1px solid var(--secondarycolor);
+    color: var(--secondarycolor);
+}
+
+.comment-form-title {
+    display: block;
+    text-align: center;
+    letter-spacing: 5px;
+    font-weight: bold;
+    font-size: 50px;
+    color: #555555;
+    width: 100%;
+    padding: 1px 0px 10px 0px;
+    margin-bottom: 30px;
 }

@@ -18,12 +18,12 @@
 
                 <div class="login-form">
                     <h1 class="login-form-title">Login</h1>
-                    <span class="login-form-txt">Account</span>
+                    <span class="form-txt">Account</span>
                     <div class="input-wrapper mg-b-36">
                         <input type="text" name="account" class="custom-input">
                         <span class="custom-focus-input"></span>
                     </div>
-                    <span class="login-form-txt">Password</span>
+                    <span class="form-txt">Password</span>
                     <div class="input-wrapper mg-b-12">
                         <input type="password" name="password" class="custom-input">
                         <span class="custom-focus-input"></span>

@@ -43,3 +43,7 @@ Route::get('/addcomments','CommentsController@add_comments_show');
 Route::post('/addcomments','CommentsController@add_comments_send');
 
 
+Route::get('/comments/{id}','CommentsController@comments_ip_show');
+
+
+

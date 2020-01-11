@@ -47,4 +47,10 @@ class CommentsController extends Controller
         return redirect('/comments');
         return view('comments',compact('UsersData','CommentsData'));
     }
+
+    public function comments_ip_show($id){
+        $CommentsData = Comment::where('cid',$id)->firstOrFail();        
+
+        return view('comments_ip',compact('CommentsData'));
+    }
 }
