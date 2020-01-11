@@ -50,7 +50,8 @@ class CommentsController extends Controller
 
     public function comments_ip_show($id){
         $CommentsData = Comment::where('cid',$id)->firstOrFail();        
+        $UsersData = User::where('id',$CommentsData->users_id)->firstOrFail();        
 
-        return view('comments_ip',compact('CommentsData'));
+        return view('comments_ip',compact('CommentsData','UsersData'));
     }
 }

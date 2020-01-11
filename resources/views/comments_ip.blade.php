@@ -22,7 +22,7 @@
                 
                     <span class="form-txt">Name</span>
                     <div class="input-wrapper mg-b-36">
-                        <input type="text" name="name"  value="{{$CommentsData->cid}}" class="custom-input" disabled="disabled">
+                        <input type="text" name="name"  value="{{$UsersData->name}}" class="custom-input" disabled="disabled">
                     </div>
                 
                     <span class="form-txt">Title</span>
