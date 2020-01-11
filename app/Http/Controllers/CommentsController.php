@@ -13,6 +13,7 @@ class CommentsController extends Controller
         $UsersData = User::all();
         // $CommentsData = Comment::all();
         $CommentsData = Comment::orderByDESC('created_at')->get();
+        // $CommentsData = Comment::orderBy('created_at', 'desc')->paginate(5);
 
         return view('comments',compact('UsersData','CommentsData'));
     }

@@ -29,13 +29,41 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `comments` (
-  `comment_id` int(10) UNSIGNED NOT NULL,
-  `account` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cid` int(10) UNSIGNED NOT NULL,
   `users_id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `content` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `updated_at` datetime NOT NULL,
   `created_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- 傾印資料表的資料 `comments`
+--
+
+INSERT INTO `comments` (`cid`, `users_id`, `title`, `content`, `updated_at`, `created_at`) VALUES
+(1, 1, '自我介紹', '我是誰', '2019-12-23 10:26:24', '2019-12-23 10:26:24'),
+(2, 2, '我是動粉', 'AAAAAAAAAAAAㄇ', '2019-12-23 10:31:41', '2019-12-23 10:31:41'),
+(3, 2, '自我介紹哦', '我是韓國帥帥', '2019-12-23 10:32:22', '2019-12-23 10:32:22'),
+(4, 1, '今天天氣', '今天天氣真滴好', '2019-12-27 12:29:45', '2019-12-27 12:29:45'),
+(5, 1, '真實的尼克', 'NICKTHEREAL', '2019-12-27 12:36:56', '2019-12-27 12:36:56'),
+(6, 2, '猜猜我是誰', '我是茂昇', '2019-12-28 13:20:22', '2019-12-28 13:20:22'),
+(7, 1, '2020', '新年快樂', '2020-01-02 12:23:28', '2020-01-02 12:23:28'),
+(8, 1, '香菇雞湯', '庭葦很會', '2020-01-02 12:23:46', '2020-01-02 12:23:46'),
+(9, 1, '香菇雞湯', '庭葦很會', '2020-01-02 12:25:45', '2020-01-02 12:25:45'),
+(10, 1, '香菇雞湯', '庭葦很會', '2020-01-02 12:26:16', '2020-01-02 12:26:16'),
+(11, 1, '香菇雞湯', '庭葦很會', '2020-01-02 12:26:18', '2020-01-02 12:26:18'),
+(12, 1, '香菇雞湯', '庭葦很會', '2020-01-02 12:26:25', '2020-01-02 12:26:25'),
+(13, 1, '香菇雞湯', '庭葦很會', '2020-01-02 12:26:26', '2020-01-02 12:26:26'),
+(14, 1, '香菇雞湯', '庭葦很會', '2020-01-02 12:26:26', '2020-01-02 12:26:26'),
+(15, 1, '香菇雞湯', '庭葦很會', '2020-01-02 12:26:36', '2020-01-02 12:26:36'),
+(16, 1, '純喫茶', '綠茶', '2020-01-02 12:27:12', '2020-01-02 12:27:12'),
+(17, 2, '你說', '綠色是你最愛的顏色', '2020-01-02 12:32:40', '2020-01-02 12:32:40'),
+(18, 4, 'hi', 'im 33', '2020-01-02 12:35:59', '2020-01-02 12:35:59'),
+(19, 1, '心得', '今天買了一個竹編腳踏車，才20塊錢，很可愛。', '2020-01-04 14:03:48', '2020-01-04 14:03:48'),
+(20, 1, '數字', '111111111', '2020-01-04 14:05:01', '2020-01-04 14:05:01'),
+(21, 1, '排數', '1\r\n2\r\n3\r\n4\r\n5\r\n6\r\n7\r\n8\r\n9\r\n10', '2020-01-04 14:05:50', '2020-01-04 14:05:50'),
+(22, 4, '自我介紹', '我是中科金太妍', '2020-01-04 14:52:31', '2020-01-04 14:52:31');
 
 -- --------------------------------------------------------
 
@@ -54,8 +82,8 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2019_12_14_163227_create_users_table', 1),
-(2, '2019_12_14_163325_create_comments_table', 1);
+(3, '2019_12_14_163227_create_users_table', 1),
+(4, '2019_12_14_163325_create_comments_table', 1);
 
 -- --------------------------------------------------------
 
@@ -77,8 +105,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `account`, `password`, `name`, `updated_at`, `created_at`) VALUES
-(1, 'doge666', 'only100', '茂森', '2019-12-15 16:53:28', '2019-12-15 16:53:28'),
-(2, 's1310734029', 'L125329220', '陳宥融', '2019-12-18 12:26:34', '2019-12-18 12:26:34');
+(1, 's1310734029', 'L125329220', '陳宥融', '2019-12-23 08:08:27', '2019-12-23 08:08:27'),
+(2, 'doge666', 'only100', 'maosheng', '2019-12-23 10:30:56', '2019-12-23 10:30:56'),
+(3, 'admin1', 'admin1', 'admin1', '2019-12-23 11:30:50', '2019-12-23 11:30:50'),
+(4, '333333', '333333', '33', '2020-01-02 12:33:26', '2020-01-02 12:33:26'),
+(5, 'tingwei', 'tingwei', '腦闆', '2020-01-02 12:37:13', '2020-01-02 12:37:13');
 
 --
 -- 已傾印資料表的索引
@@ -88,7 +119,7 @@ INSERT INTO `users` (`id`, `account`, `password`, `name`, `updated_at`, `created
 -- 資料表索引 `comments`
 --
 ALTER TABLE `comments`
-  ADD PRIMARY KEY (`comment_id`),
+  ADD PRIMARY KEY (`cid`),
   ADD KEY `comments_users_id_foreign` (`users_id`);
 
 --
@@ -111,19 +142,19 @@ ALTER TABLE `users`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `comment_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `cid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- 已傾印資料表的限制式
